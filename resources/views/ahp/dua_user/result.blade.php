@@ -1,7 +1,11 @@
 @extends('partials.navbar')
 @section('container')
 <div class="container-result">
-    <div>    
+    <div>
+        @if(isset($consistencyMessage))
+            <p style="text-align: center; font-size:14px; font-weight:700;color: {{ $messageColor }}">{{ $consistencyMessage }}</p>
+        @endif
+
     <table class="tabel-result">
         <thead>
             <tr>

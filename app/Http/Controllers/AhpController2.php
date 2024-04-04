@@ -100,10 +100,6 @@ class AhpController2 extends Controller
             'consistencyRatio' => $consistencyRatio,
         ];
 
-        if ($consistencyRatio > 0.1) {
-            return redirect()->back()->with('error', 'Consistency Ratio melebihi 0.1. Mohon lakukan pemilihan skala kepentingan lagi.');
-        }
-
         $matriksPerbandinganFasilitas = [
             [
                 1,
@@ -148,10 +144,6 @@ class AhpController2 extends Controller
             'consistencyIndex' => $consistencyIndexFasilitas,
             'consistencyRatio' => $consistencyRatioFasilitas,
         ];
-
-        if ($consistencyRatioFasilitas > 0.1) {
-            return redirect()->back()->with('error', 'Consistency Ratio melebihi 0.1. Mohon lakukan pemilihan skala kepentingan lagi.');
-        }
 
         $matriksPerbandinganHarga = [
             [
@@ -330,6 +322,14 @@ class AhpController2 extends Controller
         }
 
         arsort($totalBobotAlternatif);
+
+        if ($consistencyRatio > 0.1 && $consistencyRatioFasilitas > 0.1) {
+            $consistencyMessage = 'Nilai konsistensi rasio > 0.1. Anda disarankan untuk melakukan pemilihan skala kepentingan kembali untuk memastikan konsistensi rasio < 0.1.';
+            $messageColor = 'red';
+        } else {
+            $consistencyMessage = 'Nilai konsistensi rasio < 0.1';
+            $messageColor = 'green';
+        }
         
         return view('ahp.dua_user.result',
             compact(
@@ -344,6 +344,8 @@ class AhpController2 extends Controller
                 'globalWeightLingkunganPersen',
                 'nilaiEigenKriteriaKondisiPersen',
                 'totalBobotAlternatif',
+                'consistencyMessage',
+                'messageColor',
             )
         );
     }
