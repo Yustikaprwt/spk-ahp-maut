@@ -1,7 +1,7 @@
-{{-- LINGKUNGAN & KONDISI KAMAR INDEKOS (C4-C5) --}}
+{{-- INVENTARIS KAMAR & INVENTARIS BARANG (C1A-C1B) --}}
 
 <div class="input-group">
-    <label>Lingkungan & Keamanan Indekos</label>
+    <label>Inventaris Kamar</label>
         <div class="slider-container">
             <span class="slider-mark mark-9"></span>
             <span class="slider-mark mark-8"></span>
@@ -23,16 +23,15 @@
 
             <input 
                 type="range" 
-                id="slider10" 
-                name="C4-C5"
+                id="slider11" 
+                name="C1A-C1B"
                 min="1" 
                 max="17" 
                 step="1" 
                 value="9" 
-                oninput="updateValue10(this.value)">
-            <span class="value-label" id="sliderValue10">1</span>
-
-            <div class="slider-tooltip" id="sliderTooltip10">1</div>
+                oninput="updateValue11(this.value)">
+            <span class="value-label" id="sliderValue11">1</span>
+            <div class="slider-tooltip" id="sliderTooltip11">1</div>
 
             <span class="slider-label mark-9">9</span>
             <span class="slider-label mark-8">8</span>
@@ -52,26 +51,27 @@
             <span class="slider-label mark-0_12">8</span>
             <span class="slider-label mark-0_11">9</span>
         </div>
-    <label>Kondisi Kamar Indekos</label>
+    <label>Inventaris Barang Indekos</label>
 </div>
 
 <script>
-const slider10 = document.getElementById('slider10');
-const sliderValue10 = document.getElementById('sliderValue10');
-const sliderTooltip10 = document.getElementById('sliderTooltip10');
+const slider11 = document.getElementById('slider11');
+const sliderValue11 = document.getElementById('sliderValue11');
+const sliderTooltip11 = document.getElementById('sliderTooltip11');
 
-function updateValue10(value) {
+function updateValue11(value) {
     const snappedValue = values[value - 1];
-    sliderValue10.innerText = snappedValue;
-    slider10.setAttribute('data-snapped-value', snappedValue);
-    sliderTooltip10.innerText = snappedValue;
-    console.log(`User input 9 : ${snappedValue}`);
+    sliderValue11.innerText = snappedValue;
+    slider11.setAttribute('data-snapped-value', snappedValue);
+    sliderTooltip11.innerText = snappedValue;
+    console.log(`User input 10 : ${snappedValue}`);
 }
 
-slider10.addEventListener('input', (event) => {
+slider11.addEventListener('input', (event) => {
     const value = parseInt(event.target.value);
-    updateValue10(value);
+    updateValue11(value);
 });
 
-updateValue10(slider10.value);
+updateValue11(slider11.value);
 </script>
+

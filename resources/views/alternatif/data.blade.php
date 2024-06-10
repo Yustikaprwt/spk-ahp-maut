@@ -19,6 +19,7 @@
             <thead>
                 <tr>
                     <th class="row-1-table">No</th>
+                    <th class="row-1-table">ID Alternatif</th>
                     <th class="row-1-table">Nama Alternatif</th>
                     <th class="row-1-table">Alamat</th>
                     <th class="row-1-table">Gambar Alternatif</th>
@@ -40,6 +41,7 @@
                     @foreach ($data_alternatif as $item)
                     <tr>
                         <td class="data-indekos">{{ $i }}</td>
+                        <td class="data-indekos">{{ $item->id }}</td>
                         <td class="data-indekos">{{ $item->nama_alternatif }}</td>
                         <td class="data-indekos">{{ $item->alamat_alternatif }}</td>
                         <td class="data-indekos">

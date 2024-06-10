@@ -1,25 +1,80 @@
 {{-- SUBKRITERIA LINGKUNGAN --}}
+
+{{-- KONDISI LINGKUNGAN DAN BANGUNAN INDEKOS & SISTEM KEAMANAN LINGKUNGAN INDEKOS (C4A-C4B) --}}
+
 <div class="input-group">
-    <label for="C4A-C4B">Kondisi Lingkungan & Bangunan Indekos</label>
-        <select name="C4A-C4B" id="C4A-C4B">
-            <option style="font-weight: 700">--Pilih skala kepentingan--</option>
-            <option class="option-1" value="1">Kondisi lingkungan, bangunan dan sistem keamanan lingkungan memiliki tingkat kepentingan yang sama</option>
-            <option class="option-1" value="2">Kondisi lingkungan, bangunan berada di posisi antara sedikit lebih penting dari sistem keamanan lingkungan atau sama pentingnya</option>
-            <option class="option-1" value="3">Kondisi lingkungan, bangunan sedikit lebih penting dari sistem keamanan lingkungan, tetapi tidak signifikan</option>
-            <option class="option-1" value="4">Kondisi lingkungan, bangunan berada di posisi antara sedikit lebih penting atau jauh lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="5">Kondisi lingkungan, bangunan jauh lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="6">Kondisi lingkungan, bangunan berada di posisi antara jauh lebih penting atau sangat jauh lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="7">Kondisi lingkungan, bangunan sangat jauh lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="8">Kondisi lingkungan, bangunan berada di posisi antara jauh lebih penting atau mutlak lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="9">Kondisi lingkungan, bangunan mutlak lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-2" value="0.50">Sistem keamanan lingkungan berada di posisi antara sedikit lebih penting dari kondisi lingkungan, bangunan atau sama pentingnya</option>
-            <option class="option-2" value="0.33">Sistem keamanan lingkungan sedikit lebih penting dari kondisi lingkungan, bangunan, tetapi tidak signifikan</option>
-            <option class="option-2" value="0.25">Sistem keamanan lingkungan berada di posisi antara sedikit lebih penting atau jauh lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.20">Sistem keamanan lingkungan jauh lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.16">Sistem keamanan lingkungan berada di posisi antara jauh lebih penting atau sangat jauh lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.14">Sistem keamanan lingkungan sangat jauh lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.12">Sistem keamanan lingkungan berada di posisi antara jauh lebih penting atau mutlak lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.11">Sistem keamanan lingkungan mutlak lebih penting dari kondisi lingkungan, bangunan</option>
-        </select>
-    <label for="C4A-C4B">Sistem Keamanan Lingkungan Indekos</label>
+    <label>Kondisi Lingkungan & Bangunan Indekos</label>
+        <div class="slider-container">
+            <span class="slider-mark mark-9"></span>
+            <span class="slider-mark mark-8"></span>
+            <span class="slider-mark mark-7"></span>
+            <span class="slider-mark mark-6"></span>
+            <span class="slider-mark mark-5"></span>
+            <span class="slider-mark mark-4"></span>
+            <span class="slider-mark mark-3"></span>
+            <span class="slider-mark mark-2"></span>
+            <span class="slider-mark mark-1"></span>
+            <span class="slider-mark mark-0_50"></span>
+            <span class="slider-mark mark-0_33"></span>
+            <span class="slider-mark mark-0_25"></span>
+            <span class="slider-mark mark-0_20"></span>
+            <span class="slider-mark mark-0_16"></span>
+            <span class="slider-mark mark-0_14"></span>
+            <span class="slider-mark mark-0_12"></span>
+            <span class="slider-mark mark-0_11"></span>
+
+            <input 
+                type="range" 
+                id="slider19" 
+                name="C4A-C4B"
+                min="1" 
+                max="17" 
+                step="1" 
+                value="9" 
+                oninput="updateValue19(this.value)">
+            <span class="value-label" id="sliderValue19">1</span>
+            <div class="slider-tooltip" id="sliderTooltip19">1</div>
+
+            <span style="margin-top: 10px" class="slider-label mark-9">9</span>
+            <span style="margin-top: 10px" class="slider-label mark-8">8</span>
+            <span style="margin-top: 10px" class="slider-label mark-7">7</span>
+            <span style="margin-top: 10px" class="slider-label mark-6">6</span>
+            <span style="margin-top: 10px" class="slider-label mark-5">5</span>
+            <span style="margin-top: 10px" class="slider-label mark-4">4</span>
+            <span style="margin-top: 10px" class="slider-label mark-3">3</span>
+            <span style="margin-top: 10px" class="slider-label mark-2">2</span>
+            <span style="margin-top: 10px" class="slider-label mark-1">1</span>
+            <span style="margin-top: 10px" class="slider-label mark-0_50">2</span>
+            <span style="margin-top: 10px" class="slider-label mark-0_33">3</span>
+            <span style="margin-top: 10px" class="slider-label mark-0_25">4</span>
+            <span style="margin-top: 10px" class="slider-label mark-0_20">5</span>
+            <span style="margin-top: 10px" class="slider-label mark-0_16">6</span>
+            <span style="margin-top: 10px" class="slider-label mark-0_14">7</span>
+            <span style="margin-top: 10px" class="slider-label mark-0_12">8</span>
+            <span style="margin-top: 10px" class="slider-label mark-0_11">9</span>
+        </div>
+    <label>Sistem Keamanan Lingkungan Indekos</label>
 </div>
+
+<script>
+const slider19 = document.getElementById('slider19');
+const sliderValue19 = document.getElementById('sliderValue19');
+const sliderTooltip19 = document.getElementById('sliderTooltip19');
+
+function updateValue19(value) {
+    const snappedValue = values[value - 1];
+    sliderValue19.innerText = snappedValue;
+    slider19.setAttribute('data-snapped-value', snappedValue);
+    sliderTooltip19.innerText = snappedValue;
+    console.log(`User input 17 : ${snappedValue}`);
+}
+
+slider19.addEventListener('input', (event) => {
+    const value = parseInt(event.target.value);
+    updateValue19(value);
+});
+
+updateValue19(slider19.value);
+</script>
+
+

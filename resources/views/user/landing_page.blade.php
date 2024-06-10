@@ -85,8 +85,7 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <div id="modal-body-content">
-        </div>
+        <div id="modal-body-content"></div>
     </div>
 </div>
 
@@ -94,6 +93,16 @@
     var btnsDetail = document.querySelectorAll('.detail-kos-button');
     var modal = document.getElementById('myModal');
     var spanClose = document.getElementsByClassName("close")[0];
+
+    function formatRupiah(angka) {
+        return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function createListFromCommaSeparatedString(string) {
+        return string.split(',').map(function(item) {
+            return '<li>' + item.trim() + '</li>';
+        }).join('');
+    }
 
     function openModal(info) {
         modal.style.display = 'block';
@@ -106,16 +115,25 @@
             modalBodyContent.innerHTML += '<img src="{{ url('gambar_alternatif') }}/' + info.gambar_alternatif + '" alt="Gambar Alternatif">';
         }
 
-        modalBodyContent.innerHTML += '<p><strong>Kategori:</strong> ' + info.kategori_alternatif + '</p>';
-        modalBodyContent.innerHTML += '<p><strong>Alamat:</strong> ' + info.alamat_alternatif + '</p>';
-        modalBodyContent.innerHTML += '<p><strong>Kontak:</strong> ' + info.kontak_alternatif + '</p>';
-        modalBodyContent.innerHTML += '<p><strong>Jarak menuju kampus:</strong> ' + info.jarak_kampus + '</p>';
-        modalBodyContent.innerHTML += '<p><strong>Fasilitas:</strong> ' + info.fasilitas_alternatif + '</p>';
-        modalBodyContent.innerHTML += '<p><strong>Harga sewa:</strong> Rp ' + info.harga_alternatif + '</p>';
-        modalBodyContent.innerHTML += '<p><strong>Sistem pembayaran:</strong> ' + info.sistem_pembayaran + '</p>';
-        modalBodyContent.innerHTML += '<p><strong>Laynan publik terdekat:</strong> ' + info.layanan_publik + '</p>';
-        modalBodyContent.innerHTML += '<p><strong>Lingkungan & keamanan:</strong> ' + info.lingkungan_alternatif + '</p>';
-        modalBodyContent.innerHTML += '<p><strong>Kondisi kamar:</strong> ' + info.kondisi_alternatif + '</p>';
+        modalBodyContent.innerHTML += '<p><strong>Kategori Indekos:</strong> ' + info.kategori_alternatif + '</p>';
+        modalBodyContent.innerHTML += '<p><strong>Alamat Indekos:</strong> ' + info.alamat_alternatif + '</p>';
+        modalBodyContent.innerHTML += '<p><strong>Kontak Indekos:</strong> ' + info.kontak_alternatif + '</p>';
+        modalBodyContent.innerHTML += '<p><strong>Jarak menuju Kampus ITK:</strong> ' + info.jarak_kampus + '</p>';
+
+        var fasilitasList = createListFromCommaSeparatedString(info.fasilitas_alternatif);
+        modalBodyContent.innerHTML += '<p><strong>Fasilitas Indekos:</strong><ul>' + fasilitasList + '</ul></p>';
+
+        modalBodyContent.innerHTML += '<p><strong>Harga Sewa Indekos:</strong> Rp ' + formatRupiah(info.harga_alternatif) + '</p>';
+        modalBodyContent.innerHTML += '<p><strong>Sistem Pembayaran Indekos:</strong> ' + info.sistem_pembayaran + '</p>';
+
+        var layananPublikList = createListFromCommaSeparatedString(info.layanan_publik);
+        modalBodyContent.innerHTML += '<p><strong>Layanan Publik Terdekat:</strong><ul>' + layananPublikList + '</ul></p>';
+
+        var lingkunganList = createListFromCommaSeparatedString(info.lingkungan_alternatif);
+        modalBodyContent.innerHTML += '<p><strong>Lingkungan & Keamanan Indekos:</strong><ul>' + lingkunganList + '</ul></p>';
+
+        var kondisiList = createListFromCommaSeparatedString(info.kondisi_alternatif);
+        modalBodyContent.innerHTML += '<p><strong>Kondisi Kamar Indekos:</strong><ul>' + kondisiList + '</ul></p>';
     }
 
     spanClose.onclick = function() {

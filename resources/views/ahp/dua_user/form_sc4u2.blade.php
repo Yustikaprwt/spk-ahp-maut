@@ -1,25 +1,76 @@
 {{-- SUBKRITERIA LINGKUNGAN PENGGUNA 2 --}}
-<div class="input-group">
-    <label for="C4A-C4B-U2">Kondisi Lingkungan & Bangunan Indekos</label>
-        <select name="C4A-C4B-U2" id="C4A-C4B-U2">
-            <option style="font-weight: 700">--Pilih skala kepentingan--</option>
-            <option class="option-1" value="1">Kondisi lingkungan, bangunan dan sistem keamanan lingkungan memiliki tingkat kepentingan yang sama</option>
-            <option class="option-1" value="2">Kondisi lingkungan, bangunan berada di posisi antara sedikit lebih penting dari sistem keamanan lingkungan atau sama pentingnya</option>
-            <option class="option-1" value="3">Kondisi lingkungan, bangunan sedikit lebih penting dari sistem keamanan lingkungan, tetapi tidak signifikan</option>
-            <option class="option-1" value="4">Kondisi lingkungan, bangunan berada di posisi antara sedikit lebih penting atau jauh lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="5">Kondisi lingkungan, bangunan jauh lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="6">Kondisi lingkungan, bangunan berada di posisi antara jauh lebih penting atau sangat jauh lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="7">Kondisi lingkungan, bangunan sangat jauh lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="8">Kondisi lingkungan, bangunan berada di posisi antara jauh lebih penting atau mutlak lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-1" value="9">Kondisi lingkungan, bangunan mutlak lebih penting dari sistem keamanan lingkungan</option>
-            <option class="option-2" value="0.50">Sistem keamanan lingkungan berada di posisi antara sedikit lebih penting dari kondisi lingkungan, bangunan atau sama pentingnya</option>
-            <option class="option-2" value="0.33">Sistem keamanan lingkungan sedikit lebih penting dari kondisi lingkungan, bangunan, tetapi tidak signifikan</option>
-            <option class="option-2" value="0.25">Sistem keamanan lingkungan berada di posisi antara sedikit lebih penting atau jauh lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.20">Sistem keamanan lingkungan jauh lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.16">Sistem keamanan lingkungan berada di posisi antara jauh lebih penting atau sangat jauh lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.14">Sistem keamanan lingkungan sangat jauh lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.12">Sistem keamanan lingkungan berada di posisi antara jauh lebih penting atau mutlak lebih penting dari kondisi lingkungan, bangunan</option>
-            <option class="option-2" value="0.11">Sistem keamanan lingkungan mutlak lebih penting dari kondisi lingkungan, bangunan</option>
-        </select>
-    <label for="C4A-C4B-U2">Sistem Keamanan Lingkungan Indekos</label>
-    </div>
+
+{{-- KONDISI LINGKUNGAN & BANGUNAN USER 2 (C4A-C4B-U2) --}}
+<div class="input-group-1">
+    <label>Kondisi Lingkungan & Bangunan Indekos</label>
+        <div class="slider-container1">
+            <span class="slider-mark-1 mark-9-1"></span>
+            <span class="slider-mark-1 mark-8-1"></span>
+            <span class="slider-mark-1 mark-7-1"></span>
+            <span class="slider-mark-1 mark-6-1"></span>
+            <span class="slider-mark-1 mark-5-1"></span>
+            <span class="slider-mark-1 mark-4-1"></span>
+            <span class="slider-mark-1 mark-3-1"></span>
+            <span class="slider-mark-1 mark-2-1"></span>
+            <span class="slider-mark-1 mark-1-1"></span>
+            <span class="slider-mark-1 mark-0_50-1"></span>
+            <span class="slider-mark-1 mark-0_33-1"></span>
+            <span class="slider-mark-1 mark-0_25-1"></span>
+            <span class="slider-mark-1 mark-0_20-1"></span>
+            <span class="slider-mark-1 mark-0_16-1"></span>
+            <span class="slider-mark-1 mark-0_14-1"></span>
+            <span class="slider-mark-1 mark-0_12-1"></span>
+            <span class="slider-mark-1 mark-0_11-1"></span>
+    
+            <input 
+                type="range" 
+                id="slider19u2" 
+                name="C4A-C4B-U2"
+                min="1" 
+                max="17" 
+                step="1" 
+                value="9" 
+                oninput="updateValue19u2(this.value)">
+            <span class="value-label" id="sliderValue19u2">1</span>
+            <div class="slider-tooltip-1" id="sliderTooltip19u2">1</div>
+
+            <span class="slider-label-1 mark-9-1">9</span>
+            <span class="slider-label-1 mark-8-1">8</span>
+            <span class="slider-label-1 mark-7-1">7</span>
+            <span class="slider-label-1 mark-6-1">6</span>
+            <span class="slider-label-1 mark-5-1">5</span>
+            <span class="slider-label-1 mark-4-1">4</span>
+            <span class="slider-label-1 mark-3-1">3</span>
+            <span class="slider-label-1 mark-2-1">2</span>
+            <span class="slider-label-1 mark-1-1">1</span>
+            <span class="slider-label-1 mark-0_50-1">2</span>
+            <span class="slider-label-1 mark-0_33-1">3</span>
+            <span class="slider-label-1 mark-0_25-1">4</span>
+            <span class="slider-label-1 mark-0_20-1">5</span>
+            <span class="slider-label-1 mark-0_16-1">6</span>
+            <span class="slider-label-1 mark-0_14-1">7</span>
+            <span class="slider-label-1 mark-0_12-1">8</span>
+            <span class="slider-label-1 mark-0_11-1">9</span>
+        </div>
+    <label>Sistem Keamanan Lingkungan Indekos</label>
+</div>
+
+<script>
+    const slider19u2 = document.getElementById('slider19u2');
+    const sliderValue19u2 = document.getElementById('sliderValue19u2');
+    const sliderTooltip19u2 = document.getElementById('sliderTooltip19u2');
+
+    function updateValue19u2(value) {
+        const snappedValue = values[value - 1];
+        sliderValue19u2.innerText = snappedValue;
+        slider19u2.setAttribute('data-snapped-value', snappedValue);
+        sliderTooltip19u2.innerText = snappedValue;
+    }
+
+    slider19.addEventListener('input', (event) => {
+        const value = parseInt(event.target.value);
+        updateValue19u2(value);
+    });
+
+    updateValue19u2(slider19u2.value);
+</script>

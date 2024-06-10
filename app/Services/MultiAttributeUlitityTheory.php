@@ -9,7 +9,7 @@ class MultiAttributeUlitityTheory {
 
     public function __construct()
     {
-        $this->skalaAlternatifs = SkalaAlternatif::all();
+        $this->skalaAlternatifs = SkalaAlternatif::with('alternatif')->get();
     }
 
     public function PerhitunganBobotAlternatif()
@@ -37,9 +37,11 @@ class MultiAttributeUlitityTheory {
                 
                 if ($divisor != 0) {
                     $bobot = ($skalaAlternatif->$kriteria - $minKriteria[$kriteria]) / $divisor;
+                    $DataPenilaianArr[$skalaAlternatif->alternatif_id]['nama'] = $skalaAlternatif->alternatif->nama_alternatif;
                     $DataPenilaianArr[$skalaAlternatif->alternatif_id][$kriteria] = $bobot;
                 } else {
                     $bobot = 0; 
+                    $DataPenilaianArr[$skalaAlternatif->alternatif_id]['nama'] = $skalaAlternatif->alternatif->nama_alternatif;
                     $DataPenilaianArr[$skalaAlternatif->alternatif_id][$kriteria] = $bobot;
                 }
             }
@@ -47,5 +49,4 @@ class MultiAttributeUlitityTheory {
         
         return $DataPenilaianArr;
     }
-    
 }

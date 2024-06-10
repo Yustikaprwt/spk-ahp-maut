@@ -30,8 +30,8 @@
                             Cari Rekomendasi
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="rekomendasi">Satu Pengguna</a>
-                            <a class="dropdown-item" href="rekomendasi/dua">Dua Pengguna</a>
+                            <a class="dropdown-item" href="rekomendasi">Rekomendasi Untuk Satu Orang</a>
+                            <a class="dropdown-item" href="rekomendasi/dua">Rekomendasi Untuk Dua Orang</a>
                         </div>
                     </li>
                     <li class="nav-item">

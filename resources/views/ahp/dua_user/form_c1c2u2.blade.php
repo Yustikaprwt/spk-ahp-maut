@@ -1,8 +1,8 @@
-{{-- SUBKRITERIA LOKASI PENGGUNA 2--}}
+{{-- KRITERIA FASILITAS PENGGUNA 1 --}}
 
-{{-- DEKAT DENGAN KAMPUS & DEKAT DENGAN LAYANAN PUBLIK USER 1 (C3A-C3B-U2) --}}
+{{-- FASILITAS & HARGA USER 2 (C1-C2-U2) --}}
 <div class="input-group-1">
-    <label>Dekat dengan Kampus</label>
+    <label>Fasilitas Indekos</label>
         <div class="slider-container1">
             <span class="slider-mark-1 mark-9-1"></span>
             <span class="slider-mark-1 mark-8-1"></span>
@@ -24,15 +24,15 @@
     
             <input 
                 type="range" 
-                id="slider18u2" 
-                name="C3A-C3B-U2"
+                id="slider1u2" 
+                name="C1-C2-U2"
                 min="1" 
                 max="17" 
                 step="1" 
                 value="9" 
-                oninput="updateValue18u2(this.value)">
-            <span class="value-label" id="sliderValue18u2">1</span>
-            <div class="slider-tooltip-1" id="sliderTooltip18u2">1</div>
+                oninput="updateValue1u2(this.value)">
+            <span class="value-label" id="sliderValue1u2">1</span>
+            <div class="slider-tooltip-1" id="sliderTooltip1u2">1</div>
 
             <span class="slider-label-1 mark-9-1">9</span>
             <span class="slider-label-1 mark-8-1">8</span>
@@ -52,25 +52,26 @@
             <span class="slider-label-1 mark-0_12-1">8</span>
             <span class="slider-label-1 mark-0_11-1">9</span>
         </div>
-    <label>Dekat dengan Layanan Publik</label>
+    <label>Harga Sewa Indekos</label>
 </div>
 
 <script>
-    const slider18u2 = document.getElementById('slider18u2');
-    const sliderValue18u2 = document.getElementById('sliderValue18u2');
-    const sliderTooltip18u2 = document.getElementById('sliderTooltip18u2');
+    const slider1u2 = document.getElementById('slider1u2');
+    const sliderValue1u2 = document.getElementById('sliderValue1u2');
+    const sliderTooltip1u2 = document.getElementById('sliderTooltip1u2');
+    const values = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0.50, 0.33, 0.25, 0.20, 0.16, 0.14, 0.12, 0.11];
 
-    function updateValue18u2(value) {
+    function updateValue1u2(value) {
         const snappedValue = values[value - 1];
-        sliderValue18u2.innerText = snappedValue;
-        slider18u2.setAttribute('data-snapped-value', snappedValue);
-        sliderTooltip18u2.innerText = snappedValue;
+        sliderValue1u2.innerText = snappedValue;
+        slider1u2.setAttribute('data-snapped-value', snappedValue);
+        sliderTooltip1u2.innerText = snappedValue;
     }
 
-    slider18.addEventListener('input', (event) => {
+    slider1.addEventListener('input', (event) => {
         const value = parseInt(event.target.value);
-        updateValue18u2(value);
+        updateValue1u2(value);
     });
 
-    updateValue18u2(slider18u2.value);
+    updateValue1u2(slider1u2.value);
 </script>

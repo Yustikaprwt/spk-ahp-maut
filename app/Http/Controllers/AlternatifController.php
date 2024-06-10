@@ -13,20 +13,20 @@ class AlternatifController extends Controller
      */
     public function index(Request $request)
     {
-        $katakunci = $request->katakunci;
-        $jumlahbaris = 2;
+    $katakunci = $request->katakunci;
+    $jumlahbaris = 2;
     
-        if (strlen($katakunci)) {
-            $data_alternatif = Alternatif::where('nama_alternatif', 'like', "%$katakunci%")
-                        ->orWhere('kategori_alternatif', 'like', "%$katakunci%")
-                        ->paginate($jumlahbaris);
-        } else {
-            $data_alternatif = Alternatif::orderBy('nama_alternatif', 'desc')->paginate($jumlahbaris);
-        }
-        
-        return view('alternatif.data', compact('data_alternatif'));
+    if (strlen($katakunci)) {
+        $data_alternatif = Alternatif::where('nama_alternatif', 'like', "%$katakunci%")
+                    ->orWhere('kategori_alternatif', 'like', "%$katakunci%")
+                    ->orderBy('id', 'asc') 
+                    ->paginate($jumlahbaris);
+    } else {
+        $data_alternatif = Alternatif::orderBy('id', 'asc')->paginate($jumlahbaris); 
     }
     
+    return view('alternatif.data', compact('data_alternatif'));
+    }
 
     /**
      * Show the form for creating a new resource.
